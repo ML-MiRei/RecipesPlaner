@@ -1,0 +1,164 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|c:\\users\\feyri\\source\\repos\\recipesplan\\recipesplan\\infrastructure\\data\\database\\context\\localdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|solutionrelative:recipesplan\\infrastructure\\data\\database\\context\\localdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|c:\\users\\feyri\\source\\repos\\recipesplan\\recipesplan\\infrastructure\\data\\database\\model\\ingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|solutionrelative:recipesplan\\infrastructure\\data\\database\\model\\ingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|c:\\users\\feyri\\source\\repos\\recipesplan\\recipesplan\\infrastructure\\repositoryimplementation\\reciperepositoryimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|solutionrelative:recipesplan\\infrastructure\\repositoryimplementation\\reciperepositoryimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|c:\\users\\feyri\\source\\repos\\recipesplan\\recipesplan\\presentation\\popups\\recipeinfopopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|solutionrelative:recipesplan\\presentation\\popups\\recipeinfopopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|C:\\Users\\feyri\\source\\repos\\RecipesPlan\\recipesplan\\presentation\\modules\\internet\\view\\recipespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|solutionrelative:recipesplan\\presentation\\modules\\internet\\view\\recipespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|C:\\Users\\feyri\\source\\repos\\RecipesPlan\\recipesplan\\presentation\\modules\\schedule\\view\\schedulepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|solutionrelative:recipesplan\\presentation\\modules\\schedule\\view\\schedulepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|C:\\Users\\feyri\\source\\repos\\RecipesPlan\\recipesplan\\presentation\\modules\\internet\\viewmodel\\recipespagevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|solutionrelative:recipesplan\\presentation\\modules\\internet\\viewmodel\\recipespagevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|C:\\Users\\feyri\\source\\repos\\RecipesPlan\\recipesplan\\presentation\\modules\\schedule\\viewmodel\\schedulepagevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{939C5D51-3DE5-4788-A2DA-1BFD98D75C54}|RecipesPlan\\RecipesPlan.csproj|solutionrelative:recipesplan\\presentation\\modules\\schedule\\viewmodel\\schedulepagevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RecipeRepositoryImpl.cs",
+              "DocumentMoniker": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Infrastructure\\RepositoryImplementation\\RecipeRepositoryImpl.cs",
+              "RelativeDocumentMoniker": "RecipesPlan\\Infrastructure\\RepositoryImplementation\\RecipeRepositoryImpl.cs",
+              "ToolTip": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Infrastructure\\RepositoryImplementation\\RecipeRepositoryImpl.cs",
+              "RelativeToolTip": "RecipesPlan\\Infrastructure\\RepositoryImplementation\\RecipeRepositoryImpl.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T18:05:50.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Ingredient.cs",
+              "DocumentMoniker": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Infrastructure\\Data\\Database\\Model\\Ingredient.cs",
+              "RelativeDocumentMoniker": "RecipesPlan\\Infrastructure\\Data\\Database\\Model\\Ingredient.cs",
+              "ToolTip": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Infrastructure\\Data\\Database\\Model\\Ingredient.cs",
+              "RelativeToolTip": "RecipesPlan\\Infrastructure\\Data\\Database\\Model\\Ingredient.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T18:04:50.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LocalDbService.cs",
+              "DocumentMoniker": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Infrastructure\\Data\\Database\\Context\\LocalDbService.cs",
+              "RelativeDocumentMoniker": "RecipesPlan\\Infrastructure\\Data\\Database\\Context\\LocalDbService.cs",
+              "ToolTip": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Infrastructure\\Data\\Database\\Context\\LocalDbService.cs",
+              "RelativeToolTip": "RecipesPlan\\Infrastructure\\Data\\Database\\Context\\LocalDbService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T18:03:30.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RecipeInfoPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Presentation\\Popups\\RecipeInfoPopup.xaml",
+              "RelativeDocumentMoniker": "RecipesPlan\\Presentation\\Popups\\RecipeInfoPopup.xaml",
+              "ToolTip": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Presentation\\Popups\\RecipeInfoPopup.xaml",
+              "RelativeToolTip": "RecipesPlan\\Presentation\\Popups\\RecipeInfoPopup.xaml",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAAAIIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-15T07:21:30.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SchedulePageVM.cs",
+              "DocumentMoniker": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Presentation\\Modules\\Schedule\\ViewModel\\SchedulePageVM.cs",
+              "RelativeDocumentMoniker": "RecipesPlan\\Presentation\\Modules\\Schedule\\ViewModel\\SchedulePageVM.cs",
+              "ToolTip": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Presentation\\Modules\\Schedule\\ViewModel\\SchedulePageVM.cs",
+              "RelativeToolTip": "RecipesPlan\\Presentation\\Modules\\Schedule\\ViewModel\\SchedulePageVM.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAawCwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T07:01:52.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RecipesPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Presentation\\Modules\\Internet\\View\\RecipesPage.xaml.cs",
+              "RelativeDocumentMoniker": "RecipesPlan\\Presentation\\Modules\\Internet\\View\\RecipesPage.xaml.cs",
+              "ToolTip": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Presentation\\Modules\\Internet\\View\\RecipesPage.xaml.cs",
+              "RelativeToolTip": "RecipesPlan\\Presentation\\Modules\\Internet\\View\\RecipesPage.xaml.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwBMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T23:52:10.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RecipesPageVM.cs",
+              "DocumentMoniker": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Presentation\\Modules\\Internet\\ViewModel\\RecipesPageVM.cs",
+              "RelativeDocumentMoniker": "RecipesPlan\\Presentation\\Modules\\Internet\\ViewModel\\RecipesPageVM.cs",
+              "ToolTip": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Presentation\\Modules\\Internet\\ViewModel\\RecipesPageVM.cs",
+              "RelativeToolTip": "RecipesPlan\\Presentation\\Modules\\Internet\\ViewModel\\RecipesPageVM.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAADoAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T23:52:00.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SchedulePage.xaml",
+              "DocumentMoniker": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Presentation\\Modules\\Schedule\\View\\SchedulePage.xaml",
+              "RelativeDocumentMoniker": "RecipesPlan\\Presentation\\Modules\\Schedule\\View\\SchedulePage.xaml",
+              "ToolTip": "C:\\Users\\feyri\\source\\repos\\RecipesPlan\\RecipesPlan\\Presentation\\Modules\\Schedule\\View\\SchedulePage.xaml",
+              "RelativeToolTip": "RecipesPlan\\Presentation\\Modules\\Schedule\\View\\SchedulePage.xaml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAGMAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-15T07:02:05.01Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

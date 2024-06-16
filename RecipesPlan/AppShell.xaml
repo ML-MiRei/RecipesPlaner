@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell x:Class="RecipesPlan.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:RecipesPlan.Presentation.Modules.Main.View"
+       xmlns:view2="clr-namespace:RecipesPlan.Presentation.Modules.Internet.View"
+       xmlns:view3="clr-namespace:RecipesPlan.Presentation.Modules.Schedule.View"
+       Shell.FlyoutBehavior="Disabled"
+       Shell.TabBarTitleColor="{StaticResource Green}"
+       Shell.TabBarUnselectedColor="{StaticResource Primary}"
+       Shell.NavBarIsVisible="False">
+
+
+    <TabBar>
+        <ShellContent Title="Home"
+                      Icon="home.png"
+                      ContentTemplate="{DataTemplate local:MainPage}"
+                      Route="MainPage" />
+
+        <ShellContent Title="Recipes"
+                      Icon="planet_earth.png"
+                      ContentTemplate="{DataTemplate view2:RecipesPage}"
+                      Route="RecipesPage" />
+
+        <ShellContent Title="Schedule"
+                      Icon="menu.png"
+                      ContentTemplate="{DataTemplate view3:SchedulePage}"
+                      Route="SchedulePage" />
+    </TabBar>
+
+</Shell>

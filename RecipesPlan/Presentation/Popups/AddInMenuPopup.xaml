@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               x:Class="RecipesPlan.Presentation.Popups.AddInMenuPopup"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               CanBeDismissedByTappingOutsideOfPopup="False">
+    <Grid ColumnDefinitions="*,*"
+          Padding="30,20"
+          RowDefinitions="Auto,Auto, Auto">
+        <Label Text="Select a date"
+               TextColor="{StaticResource Primary}"
+               FontAttributes="Bold"
+               Grid.ColumnSpan="2"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+        
+        <DatePicker x:Name="SelectDate"
+                    Grid.Row="1"
+                    Margin="10"
+                    Grid.ColumnSpan="2"/>
+        
+        <Button Grid.Row="2"
+                Text="Save"
+                Clicked="PositiveButton_Clicked"
+                CornerRadius="5"
+                WidthRequest="100"
+                HeightRequest="40"
+                Margin="0,0,10,0"
+                Background="{StaticResource Green}"
+                x:Name="PositiveButton" />
+        <Button Grid.Row="2"
+                Text="Cancel"
+                Grid.Column="1"
+                Clicked="NegativeButton_Clicked"
+                CornerRadius="5"
+                WidthRequest="100"
+                HeightRequest="40"
+                Margin="10,0,0,0"
+                Background="{StaticResource Red}"
+                x:Name="NegativeButton" />
+
+
+    </Grid>
+</toolkit:Popup>

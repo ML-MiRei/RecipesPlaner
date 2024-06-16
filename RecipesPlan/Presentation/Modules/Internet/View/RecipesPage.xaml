@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RecipesPlan.Presentation.Modules.Internet.View.RecipesPage"
+             Title="RecipesPage"
+             xmlns:converter="clr-namespace:RecipesPlan.Presentation.Converters"
+             xmlns:viemodel="clr-namespace:RecipesPlan.Presentation.Modules.Internet.ViewModel">
+
+
+
+
+    <ScrollView Padding="20"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill">
+
+
+        <VerticalStackLayout VerticalOptions="Fill"
+                             HorizontalOptions="Fill"
+                             Spacing="20">
+            <Grid ColumnDefinitions="7*,*">
+                <Frame BorderColor="{StaticResource Primary}"
+                       HorizontalOptions="Fill"
+                       HeightRequest="40"
+                       CornerRadius="5">
+                    <Entry Placeholder="Recipe label.."
+                           FontSize="12"
+                           HorizontalOptions="Fill"
+                           VerticalOptions="Center"
+                           PlaceholderColor="{StaticResource Primary}"
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Center"
+                           Text="{Binding SearchLabel}" />
+                </Frame>
+
+                <ImageButton Source="search_icon.png"
+                             Grid.Column="1"
+                             Margin="10,0,0,0"
+                             VerticalOptions="Center"
+                             Padding="5"
+                             Command="{Binding ApplyFilter}" />
+            </Grid>
+
+
+            <HorizontalStackLayout Spacing="20">
+                <Label Text="Filters"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource Primary}" />
+
+                <ImageButton Clicked="OpenCloseFilter"
+                             Source="filter.png"
+                             WidthRequest="20"
+                             HeightRequest="20" />
+            </HorizontalStackLayout>
+
+
+            <VerticalStackLayout x:Name="GroupFilters"
+                                 Spacing="10">
+                <Label Text="Diets"
+                       FontSize="14"
+                       TextColor="{StaticResource Primary}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start" />
+                <CollectionView ItemsLayout="HorizontalList"
+                                ItemsSource="{Binding Diets}"
+                                SelectedItem="{Binding SelectedDiet, Mode=TwoWay}"
+                                SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Frame CornerRadius="10"
+                                   Margin="0,0,20,0"
+                                   InputTransparent="True"
+                                   HeightRequest="80"
+                                   BackgroundColor="{StaticResource Secondary}"
+                                   BorderColor="{StaticResource Primary}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup Name="CommonStates">
+                                        <VisualState Name="Normal"></VisualState>
+                                        <VisualState Name="Selected">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor"
+                                                        Value="{StaticResource SecondaryDarkText}"></Setter>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Label Text="{Binding .}"
+                                       TextColor="{StaticResource Primary}"
+                                       FontSize="14"
+                                       Margin="20,10" />
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Label Text="Health"
+                       FontSize="14"
+                       TextColor="{StaticResource Primary}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start" />
+                <CollectionView SelectionMode="Multiple"
+                                SelectedItems="{Binding SelectedHealths, Mode=TwoWay}"
+                                ItemsLayout="HorizontalList"
+                                ItemsSource="{Binding Healths}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="10"
+                                   Margin="0,0,20,0"
+                                   HeightRequest="80"
+                                   InputTransparent="True"
+                                   BackgroundColor="{StaticResource Secondary}"
+                                   BorderColor="{StaticResource Primary}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup Name="CommonStates">
+                                        <VisualState Name="Normal"></VisualState>
+                                        <VisualState Name="Selected">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor"
+                                                        Value="{StaticResource SecondaryDarkText}"></Setter>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Label Text="{Binding .}"
+                                       TextColor="{StaticResource Primary}"
+                                       FontSize="14"
+                                       Margin="20,10" />
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Label Text="Meal types"
+                       FontSize="14"
+                       TextColor="{StaticResource Primary}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start" />
+                <CollectionView SelectionMode="Single"
+                                SelectedItem="{Binding SelectedMealType, Mode=TwoWay}"
+                                ItemsLayout="HorizontalList"
+                                ItemsSource="{Binding MealTypes}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="10"
+                                   Margin="0,0,20,0"
+                                   HeightRequest="80"
+                                   InputTransparent="True"
+                                   BackgroundColor="{StaticResource Secondary}"
+                                   BorderColor="{StaticResource Primary}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup Name="CommonStates">
+                                        <VisualState Name="Normal"></VisualState>
+                                        <VisualState Name="Selected">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor"
+                                                        Value="{StaticResource SecondaryDarkText}"></Setter>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Label Text="{Binding .}"
+                                       TextColor="{StaticResource Primary}"
+                                       FontSize="14"
+                                       Margin="20,10" />
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Label Text="Dish types"
+                       FontSize="14"
+                       TextColor="{StaticResource Primary}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start" />
+                <CollectionView SelectionMode="Multiple"
+                                ItemsLayout="HorizontalList"
+                                SelectedItems="{Binding SelectedDishTypes, Mode=TwoWay}"
+                                ItemsSource="{Binding DishTypes}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="10"
+                                   Margin="0,0,20,0"
+                                   HeightRequest="80"
+                                   InputTransparent="True"
+                                   BackgroundColor="{StaticResource Secondary}"
+                                   BorderColor="{StaticResource Primary}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup Name="CommonStates">
+                                        <VisualState Name="Normal"></VisualState>
+                                        <VisualState Name="Selected">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor"
+                                                        Value="{StaticResource SecondaryDarkText}"></Setter>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Label Text="{Binding .}"
+                                       TextColor="{StaticResource Primary}"
+                                       FontSize="14"
+                                       Margin="20,10" />
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button Command="{Binding ApplyFilter, Source={RelativeSource AncestorType={x:Type viemodel:RecipesPageVM}}}"
+                        HorizontalOptions="Fill"
+                        Text="Apply filter"
+                        TextColor="White"
+                        Margin="0,10,0,0"
+                        BackgroundColor="{StaticResource Primary}" />
+
+            </VerticalStackLayout>
+
+
+
+            <CarouselView ItemsSource="{Binding Recipes}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="20">
+                            <VerticalStackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="2"
+                                                      Command="{Binding SaveRecipe, Source={RelativeSource AncestorType={x:Type viemodel:RecipesPageVM}}}"
+                                                      CommandParameter="{Binding .}" />
+                            </VerticalStackLayout.GestureRecognizers>
+                            <Grid HeightRequest="300"
+                                  Grid.ColumnSpan="2"
+                                  Grid.Row="1">
+                                <Image x:Name="myImage"
+                                       Source="{Binding UrlImage}">
+                                </Image>
+                                <ActivityIndicator Grid.Column="0"
+                                                   Grid.Row="0"
+                                                   BindingContext="{x:Reference myImage}"
+                                                   HeightRequest="24"
+                                                   Color="{StaticResource Primary}"
+                                                   IsRunning="{Binding Path=IsLoading, Source={x:Reference myImage}}"
+                                                   IsVisible="{Binding Path=IsLoading, Source={x:Reference myImage}}" />
+                            </Grid>
+
+                            <Label Text="{Binding Label}"
+                                   Grid.ColumnSpan="2"
+                                   TextColor="{StaticResource Primary}"
+                                   FontSize="14"
+                                   FontAttributes="Bold" />
+
+                            <Grid ColumnDefinitions="*,*"
+                                  HorizontalOptions="Fill"
+                                  RowDefinitions="*,*">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Portions: "
+                                                  FontAttributes="Bold"
+                                                  TextColor="{StaticResource Primary}" />
+                                            <Span Text="{Binding Yield}"
+                                                  TextColor="{StaticResource Primary}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Grid.Column="1">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Meal type: "
+                                                  FontAttributes="Bold"
+                                                  TextColor="{StaticResource Primary}" />
+                                            <Span Text="{Binding MealType}"
+                                                  TextColor="{StaticResource Primary}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Grid.Row="1">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Calories: "
+                                                  FontAttributes="Bold"
+                                                  TextColor="{StaticResource Primary}" />
+                                            <Span Text="{Binding Calories}"
+                                                  TextColor="{StaticResource Primary}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Grid.Row="1"
+                                       Grid.Column="1">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Cuisine type: "
+                                                  FontAttributes="Bold"
+                                                  TextColor="{StaticResource Primary}" />
+                                            <Span Text="{Binding CuisineType}"
+                                                  TextColor="{StaticResource Primary}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+
+                            <CollectionView ItemsSource="{Binding IngredientsNames}">
+                                <CollectionView.Header>
+                                    <Label Text="Ingredients"
+                                           TextColor="{StaticResource Primary}"
+                                           FontSize="12"
+                                           FontAttributes="Bold" />
+                                </CollectionView.Header>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <HorizontalStackLayout>
+                                            <Ellipse Fill="{Binding ., Converter={converter:RandomColorConverter}}"
+                                                     WidthRequest="10"
+                                                     HeightRequest="10"
+                                                     Margin="0,0,10,0" />
+                                            <Label Text="{Binding .}"
+                                                   TextColor="{StaticResource Primary}"
+                                                   FontSize="12" />
+                                        </HorizontalStackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                            <Label Text="Health tags"
+                                   Grid.ColumnSpan="2"
+                                   TextColor="{StaticResource Primary}"
+                                   FontSize="12"
+                                   FontAttributes="Bold" />
+
+                            <CollectionView ItemsSource="{Binding HealthLabels}"
+                                            IsVisible="{Binding HealthLabels, Converter={converter:VisibilityConverter}}"
+                                            ItemsLayout="HorizontalGrid, 3">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <HorizontalStackLayout>
+                                            <Label>
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="#"
+                                                              FontSize="12"
+                                                              TextColor="{StaticResource Primary}" />
+                                                        <Span Text="{Binding .}"
+                                                              TextColor="{StaticResource Primary}"
+                                                              FontSize="12" />
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </HorizontalStackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

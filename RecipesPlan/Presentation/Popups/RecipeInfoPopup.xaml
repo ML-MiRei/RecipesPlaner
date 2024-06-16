@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               x:Class="RecipesPlan.Presentation.Popups.RecipeInfoPopup"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               CanBeDismissedByTappingOutsideOfPopup="False"
+               xmlns:viewmodel="clr-namespace:RecipesPlan.Presentation.Popups"
+               xmlns:converter="clr-namespace:RecipesPlan.Presentation.Converters">
+    <ScrollView Padding="30"
+                Margin="10,0">
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Recipe Info"
+                   TextColor="{StaticResource Primary}"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold"
+                   Grid.ColumnSpan="2"
+                   Margin="0,0,0,10"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Label"
+                   VerticalOptions="Center"
+                   Grid.Row="1"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource Primary}" />
+            <Editor Text="{Binding Label}"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    x:Name="LabelInfo"
+                    Placeholder="Label recipe.."
+                    PlaceholderColor="{StaticResource Primary}"
+                    TextColor="{StaticResource Primary}" />
+
+            <Label Text="Calories"
+                   Grid.Row="2"
+                   VerticalOptions="Center"
+                   Margin="0,0,5,0"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource Primary}" />
+            <Editor Text="{Binding Calories}"
+                    Placeholder="Calories.."
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Keyboard="Numeric"
+                    PlaceholderColor="{StaticResource Primary}"
+                    TextColor="{StaticResource Primary}" />
+
+            <Label Text="Portions"
+                   Margin="0,0,5,0"
+                   Grid.Row="3"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource Primary}" />
+            <Editor Text="{Binding Yield}"
+                    Placeholder="Portions.."
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Keyboard="Numeric"
+                    PlaceholderColor="{StaticResource Primary}"
+                    TextColor="{StaticResource Primary}" />
+
+            <Label Text="Notes:"
+                   Grid.Row="4"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource Primary}" />
+
+            <Editor Text="{Binding Note}"
+                    Placeholder="Note.."
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    PlaceholderColor="{StaticResource Primary}"
+                    TextColor="{StaticResource Primary}" />
+
+            <Label Text="Ingredients:"
+                   Grid.Row="5"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource Primary}" />
+
+            <Button Text="Add"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    FontSize="9"
+                    WidthRequest="70"
+                    HeightRequest="30"
+                    Margin="0,15"
+                    HorizontalOptions="Start"
+                    Command="{Binding AddIngredient}"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource Primary}" />
+
+
+            <CollectionView ItemsSource="{Binding IngredientsNames}"
+                            Grid.Row="6"
+                            x:Name="IngredientList"
+                            HorizontalOptions="Fill"
+                            Grid.ColumnSpan="2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+
+                        <Grid ColumnDefinitions="Auto, Auto">
+                            <Ellipse WidthRequest="10"
+                                     HeightRequest="10"
+                                     Margin="0,0,10,0"
+                                     Fill="{Binding ., Converter={converter:RandomColorConverter}}" />
+                            <Label Grid.Column="1"
+                                   HorizontalOptions="Fill"
+                                   TextColor="{StaticResource Primary}"
+                                   FontSize="14"
+                                   Text="{Binding ., Mode=TwoWay}" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button BackgroundColor="{StaticResource Green}"
+                    Text="Save"
+                    Clicked="Save_Clicked"
+                    TextColor="White"
+                    Grid.Row="7"
+                    Margin="0,10,10,0"
+                    CornerRadius="5" />
+
+            <Button BackgroundColor="{StaticResource Red}"
+                    Text="Cancel"
+                    Clicked="Cancel_Clicked"
+                    TextColor="White"
+                    Grid.Row="7"
+                    Margin="0,10,0,0"
+                    Grid.Column="1"
+                    CornerRadius="5" />
+
+
+        </Grid>
+    </ScrollView>
+</toolkit:Popup>

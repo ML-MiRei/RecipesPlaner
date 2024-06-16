@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               x:Class="RecipesPlan.Presentation.Popups.AlertPopup"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               CanBeDismissedByTappingOutsideOfPopup="False"
+               Size="250,120">
+
+    <Grid RowDefinitions="*,*"
+          BackgroundColor="White"
+          ColumnDefinitions="*,*">
+
+        <Label x:Name="TitlePopup"
+               TextColor="{StaticResource Primary}"
+               FontAttributes="Bold"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Grid.ColumnSpan="2" />
+        <Button Grid.Row="1"
+                Clicked="PositiveButton_Clicked"
+                CornerRadius="5"
+                Margin="20,0,5,20"
+                Background="{StaticResource Green}"
+                x:Name="PositiveButton" />
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Clicked="NegativeButton_Clicked"
+                CornerRadius="5"
+                Margin="5,0,20,20"
+                Background="{StaticResource Red}"
+                x:Name="NegativeButton" />
+
+
+    </Grid>
+</toolkit:Popup>

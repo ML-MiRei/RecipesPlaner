@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RecipesPlan.Presentation.Modules.Schedule.View.SchedulePage"
+             xmlns:cal="clr-namespace:Plugin.Maui.Calendar.Controls;assembly=Plugin.Maui.Calendar"
+             xmlns:viewmodel="clr-namespace:RecipesPlan.Presentation.Modules.Schedule.ViewModel"
+             xmlns:converter="clr-namespace:RecipesPlan.Presentation.Converters">
+    <VerticalStackLayout>
+
+        <cal:Calendar Events="{Binding RecipesCalendarPlan}"
+                      ArrowsBorderColor="{StaticResource Primary}"
+                      ArrowsColor="{StaticResource Primary}"
+                      DaysTitleColor="{StaticResource Primary}"
+                      EventIndicatorSelectedColor="{StaticResource SecondaryDarkText}"
+                      EventIndicatorColor="{StaticResource SecondaryDarkText}"
+                      EventIndicatorType="BackgroundFull"
+                      MonthLabelColor="{StaticResource Primary}"
+                      YearLabelColor="{StaticResource Primary}"
+                      SelectedDateColor="{StaticResource Primary}"
+                      Margin="20"
+                      TodayOutlineColor="{StaticResource Primary}"
+                      DisabledDayColor="{StaticResource Secondary}"
+                      SelectedDayBackgroundColor="{StaticResource SecondaryDarkText}"
+                      EventsScrollViewVisible="True">
+            <cal:Calendar.HeaderSectionTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,10"
+                          HorizontalOptions="Fill"
+                          IsVisible="{Binding ShowMonthPicker}"
+                          VerticalOptions="Start"
+                          RowDefinitions="Auto"
+                          ColumnDefinitions="1*,3*,1*">
+                        <Border Grid.Column="0"
+                                Padding="0"
+                                Stroke="{StaticResource Primary}"
+                                StrokeShape="RoundRectangle 18"
+                                HeightRequest="36"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                WidthRequest="36">
+                            <Label FontAttributes="Bold"
+                                   FontFamily="{Binding ArrowsFontFamily}"
+                                   FontSize="25"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"
+                                   InputTransparent="True"
+                                   Text="-"
+                                   TextColor="{Binding ArrowsColor}"
+                                   VerticalOptions="Center"
+                                   VerticalTextAlignment="Center" />
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding PrevLayoutUnitCommand}" />
+                            </Border.GestureRecognizers>
+                        </Border>
+
+                        <Label Grid.Column="1"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding LayoutUnitText, Mode=TwoWay}"
+                                          TextColor="{StaticResource Primary}" />
+                                    <Span Text=", "
+                                          TextColor="{StaticResource Primary}" />
+                                    <Span Text="{Binding Year, Mode=TwoWay}"
+                                          TextColor="{StaticResource Primary}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Border Grid.Column="2"
+                                Stroke="{StaticResource Primary}"
+                                StrokeShape="RoundRectangle 18"
+                                HeightRequest="36"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                WidthRequest="36">
+                            <Label FontAttributes="Bold"
+                                   FontFamily="{Binding ArrowsFontFamily}"
+                                   FontSize="25"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"
+                                   InputTransparent="True"
+                                   Text="+"
+                                   TextColor="{Binding ArrowsColor}"
+                                   VerticalOptions="Center"
+                                   VerticalTextAlignment="Center" />
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NextLayoutUnitCommand}" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </cal:Calendar.HeaderSectionTemplate>
+            <cal:Calendar.EventTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItem Text="Delete"
+                                       IconImageSource="bin.png"
+                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:SchedulePageVM}}, Path=DeleteRecipeCommand}"
+                                       CommandParameter="{Binding .}"
+                                       BackgroundColor="DarkRed" />
+                        </SwipeView.RightItems>
+                        <Frame CornerRadius="5"
+                               Margin="0,15,0,0"
+                               BorderColor="{StaticResource Primary}">
+                            <VerticalStackLayout Spacing="10">
+
+                                <Grid ColumnDefinitions="Auto, Auto">
+                                    <Ellipse WidthRequest="10"
+                                             HeightRequest="10"
+                                             Margin="0,0,10,0"
+                                             Fill="{Binding Label, Converter={converter:RandomColorConverter}}" />
+                                    <Label Grid.Column="1"
+                                           MaximumWidthRequest="280"
+                                           TextColor="{StaticResource Primary}"
+                                           FontSize="14"
+                                           Text="{Binding Label}" />
+                                </Grid>
+                            
+                                
+                            </VerticalStackLayout>
+                        </Frame>
+                    </SwipeView>
+                </DataTemplate>
+            </cal:Calendar.EventTemplate>
+        </cal:Calendar>
+
+
+    </VerticalStackLayout>
+</ContentPage>

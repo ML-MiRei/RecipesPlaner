@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               x:Class="RecipesPlan.Presentation.Popups.InputPopup"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               Size="300,150"
+               CanBeDismissedByTappingOutsideOfPopup="False">
+    <Grid Padding="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Text="Input data"
+               TextColor="{StaticResource Primary}"
+               FontAttributes="Bold"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+        <Editor Grid.Column="1"
+                x:Name="InputData"
+                VerticalOptions="Center"
+                Placeholder="Ingredient name.."
+                TextColor="{StaticResource Primary}" />
+
+        <Button BackgroundColor="{StaticResource Green}"
+                Text="Save"
+                Clicked="Save_Clicked"
+                TextColor="White"
+                Grid.Row="1"
+                Margin="0,0,10,0"
+                CornerRadius="5" />
+
+        <Button BackgroundColor="{StaticResource Red}"
+                Text="Cancel"
+                Clicked="Cancel_Clicked"
+                TextColor="White"
+                Grid.Row="1"
+                Grid.Column="1"
+                CornerRadius="5" />
+    </Grid>
+</toolkit:Popup>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RecipesPlan.Presentation.UserControls.IngredientTemplate">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Ellipse x:Name="Circle"
+                 WidthRequest="20"
+                 HeightRequest="20" />
+
+        <Label Text="{Binding .}"
+               Grid.Column="1" />
+
+
+
+    </Grid>
+</ContentView>
